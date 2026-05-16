@@ -1,0 +1,7 @@
+Colocá tu archivo PDF en esta carpeta con el nombre exacto:
+
+  cv.pdf
+
+Ruta final: cv-simona/public/cv.pdf
+
+Los botones "Descargar CV" y "Ver CV" apuntan a /cv.pdf

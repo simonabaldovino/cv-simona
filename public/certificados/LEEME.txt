@@ -1,0 +1,21 @@
+Cómo subir tus certificados (PDF)
+================================
+
+1. Guardá cada certificado como PDF en ESTA carpeta:
+   cv-simona/public/certificados/
+
+2. Usá estos nombres (o cambiá la ruta en src/data/cv.ts):
+
+   qa-manual.pdf          → Testing QA Manual (Coderhouse)
+   siglo21-2025.pdf       → Reconocimiento IES Siglo 21
+   charla-testing.pdf     → Conferencia UTN FRC
+   workshop-cv.pdf        → Workshop IESCAMP2025
+
+3. En el navegador se abren con "Ver certificado" en pestaña nueva.
+   NO se descargan solos (a diferencia del botón "Descargar CV").
+
+4. Si `npm run dev` está corriendo, al guardar el PDF en esta carpeta
+   ya podés probar el link (a veces hace falta refrescar F5).
+
+No hace falta subir nada a internet aparte: son archivos locales
+en tu proyecto, igual que public/cv.pdf
