@@ -1,0 +1,18 @@
+El nombre en la barra del navegador ("Copia de CV Agri") NO viene del código web.
+Viene del TÍTULO INTERNO del archivo PDF.
+
+Cómo corregirlo:
+
+1. Abrí tu CV en Word, Google Docs o Canva (donde lo creaste).
+2. Archivo → Guardar como / Exportar → PDF.
+3. Antes de guardar, si podés, poné como nombre del documento:
+   CV Simona Baldovino
+4. Guardá el PDF en esta carpeta con el nombre exacto:
+   CV-Simona-Baldovino.pdf
+   (reemplazá el archivo que ya está)
+
+Alternativa rápida en Windows:
+- Clic derecho en el PDF → Propiedades → Detalles
+- Editá "Título" y poné: CV Simona Baldovino
+
+La URL del sitio ya está bien (CV-Simona-Baldovino.pdf).

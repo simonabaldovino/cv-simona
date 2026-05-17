@@ -2,7 +2,7 @@ export const profile = {
   firstName: 'Simona',
   lastName: 'Baldovino',
   fullName: 'Simona Baldovino',
-  title: 'Estudiante de Analista en Sistemas | QA Manual',
+  title: 'Estudiante de Analista de Sistemas | QA Manual',
   tagline:
     'Apasionada por la tecnología, el desarrollo de software y la resolución de problemas',
   email: 'baldovinosimona020@gmail.com',
@@ -11,12 +11,14 @@ export const profile = {
   photo: '/profile.jpg',
   github: 'https://github.com/simonabaldovino',
   linkedin: 'https://www.linkedin.com/in/simona-baldovino-6a38b0363/',
-  cvPdf: '/cv.pdf',
+  cvPdf: '/CV-Simona-Baldovino.pdf',
+  cvFileName: 'CV-Simona-Baldovino.pdf',
 }
 
 export const navItems = [
   { id: 'home', label: 'Inicio' },
   { id: 'about', label: 'Sobre mí' },
+  { id: 'availability', label: 'Disponibilidad' },
   { id: 'skills', label: 'Skills' },
   { id: 'projects', label: 'Proyectos' },
   { id: 'experience', label: 'Experiencia' },
@@ -24,6 +26,14 @@ export const navItems = [
   { id: 'certificates', label: 'Certificados' },
   { id: 'contact', label: 'Contacto' },
 ] as const
+
+export const availability = {
+  paragraphs: [
+    'Actualmente me encuentro en búsqueda de nuevas oportunidades profesionales en el área de desarrollo de software o testing QA.',
+    'Cuento con disponibilidad para trabajar part-time o full-time, con modalidad remota o híbrida.',
+    'Estoy interesada en entornos donde pueda seguir aprendiendo, aportar valor y continuar desarrollándome profesionalmente.',
+  ],
+}
 
 export const about = {
   paragraphs: [
@@ -64,25 +74,25 @@ export const skillGroups = [
 
 export const projects = [
   {
+    name: 'Proyecto QA Blinker',
+    description:
+      'Testing manual de aplicación, diseño de casos de prueba, ejecución de pruebas y reporte de bugs. Experiencia práctica en QA.',
+    technologies: ['Jira', 'Testing funcional'],
+    icon: 'mdi-bug-check-outline',
+  },
+  {
     name: 'Sistema de Inscripción a Materias',
     description:
-      'Aplicación en Java utilizando POO, listas y lógica de negocio para gestionar inscripciones.',
+      'Aplicación en Java utilizando POO, listas y lógica de negocio para gestionar inscripciones. Proyecto académico.',
     technologies: ['Java', 'NetBeans'],
     icon: 'mdi-school-outline',
   },
   {
     name: 'Aplicaciones de Escritorio',
     description:
-      'Desarrollo de programas en C# con validaciones, estructuras de control y manejo de datos.',
+      'Desarrollo de programas en C# con validaciones, estructuras de control y manejo de datos. Proyecto académico.',
     technologies: ['C#', 'Windows Forms', 'Visual Studio'],
     icon: 'mdi-microsoft-windows',
-  },
-  {
-    name: 'Proyecto QA Blinker',
-    description:
-      'Testing manual de aplicación, diseño de casos de prueba, ejecución de pruebas y reporte de bugs.',
-    technologies: ['Jira', 'Testing funcional'],
-    icon: 'mdi-bug-check-outline',
   },
 ]
 
@@ -125,25 +135,28 @@ export const education = [
   {
     degree: 'Analista en Sistemas',
     institution: 'IES Siglo 21',
-    detail: 'En curso — 3.er semestre',
+    detail: 'Java, C#, Github',
+    year: '2025 — 2027',
     icon: 'mdi-laptop',
   },
   {
     degree: 'Curso QA Manual',
     institution: 'Coderhouse',
     detail: 'Testing manual y metodologías ágiles',
+    year: '2026',
     icon: 'mdi-clipboard-check-outline',
   },
   {
     degree: 'Ingeniería en Sistemas',
     institution: 'UTN — FRC',
-    detail: 'Cursado 2024',
+    detail: 'Python',
+    year: 'Cursado 2024',
     icon: 'mdi-cog-outline',
   },
   {
     degree: 'Secundario completo',
-    institution: 'Instituto Nuestra Señora de la Misericordia',
-    detail: 'Canals, Córdoba',
+    institution: 'INSM — Canals, Córdoba',
+    year: '2023',
     icon: 'mdi-certificate-outline',
   },
 ]
@@ -161,18 +174,18 @@ export const certificates = [
     institution: 'IES Siglo 21',
     year: '2025',
     icon: 'mdi-school-outline',
-    pdf: '/certificados/siglo21-2025.pdf',
+    pdf: '/certificados/certificado_ies.pdf',
   },
   {
     name: 'Conferencia "El Rol del Testing en la Era de la Automatización y la IA"',
     institution: 'UTN FRC',
     year: '2025',
     icon: 'mdi-presentation',
-    pdf: '/certificados/charla-testing.pdf',
+    pdf: '/certificados/conferencia_utn.pdf',
   },
   {
     name: 'Workshop: Arma tu CV tradicional',
-    institution: 'IESCAMP2025',
+    institution: 'IES CAMP ',
     year: '2025',
     icon: 'mdi-account-voice',
     pdf: '/certificados/workshop-cv.pdf',
@@ -181,5 +194,6 @@ export const certificates = [
 
 export const languages = [
   { name: 'Español', level: 'Nativo' },
+
   { name: 'Inglés', level: 'Intermedio' },
 ]

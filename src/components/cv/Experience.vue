@@ -23,14 +23,23 @@
             <template #prepend>
               <v-avatar :icon="exp.icon" color="primary" size="36" variant="tonal" />
             </template>
-            <v-card-title class="exp-title">{{ exp.role }}</v-card-title>
-            <v-card-subtitle class="exp-company">
-              {{ exp.company }}
-              <span v-if="exp.place"> · {{ exp.place }}</span>
-            </v-card-subtitle>
-            <v-chip class="mt-2" color="primary" size="x-small" variant="tonal">
-              {{ exp.period }}
-            </v-chip>
+            <div class="exp-header">
+              <div class="exp-header__main">
+                <v-card-title class="exp-title pa-0">{{ exp.role }}</v-card-title>
+                <v-chip
+                  class="exp-period flex-shrink-0 date-chip"
+                  color="primary"
+                  size="small"
+                  variant="tonal"
+                >
+                  {{ exp.period }}
+                </v-chip>
+              </div>
+              <v-card-subtitle class="exp-company pa-0 mt-1">
+                {{ exp.company }}
+                <span v-if="exp.place"> · {{ exp.place }}</span>
+              </v-card-subtitle>
+            </div>
           </v-card-item>
           <v-card-text class="exp-desc pb-4 pt-0">
             {{ exp.description }}
@@ -45,3 +54,22 @@
   import CvSection from '@/components/cv/CvSection.vue'
   import { experiences } from '@/data/cv'
 </script>
+
+<style scoped>
+.exp-header {
+  width: 100%;
+  min-width: 0;
+}
+
+.exp-header__main {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+}
+
+.exp-title {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+</style>

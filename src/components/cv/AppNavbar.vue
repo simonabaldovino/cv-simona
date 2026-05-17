@@ -1,6 +1,6 @@
 <template>
   <header class="portfolio-nav">
-    <v-toolbar class="portfolio-nav__bar" density="compact" flat height="52">
+    <v-toolbar class="portfolio-nav__bar" flat height="68">
       <nav class="portfolio-nav__links" aria-label="Secciones del portfolio">
         <button
           v-for="item in navItems"

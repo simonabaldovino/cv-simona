@@ -18,7 +18,6 @@
         <v-chip
           v-for="item in group.items"
           :key="item"
-          class="skill-chip"
           color="primary"
           label
           size="small"

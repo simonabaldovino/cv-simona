@@ -5,21 +5,30 @@
     <v-main>
       <Home @scroll="scrollTo" />
       <AboutMe />
+      <Availability />
       <Skills />
       <Projects />
       <Experience />
       <Education />
       <Certificates />
       <Contact />
+      <CtaBanner />
     </v-main>
 
-    <v-footer class="text-center py-6" color="surface" border>
-      <div>
-        <p class="text-body-2 mb-1">© {{ year }} {{ profile.fullName }}</p>
-        <p class="text-caption text-medium-emphasis">
-          Analista en Sistemas · QA Manual · Developer en formación
-        </p>
-      </div>
+    <v-footer class="portfolio-footer" color="surface" border>
+      <v-container class="footer-inner">
+        <div class="footer-line text-caption text-medium-emphasis">
+          <div class="footer-left">
+            <p class="footer-name mb-1">© {{ year }} {{ profile.fullName }}</p>
+            <p class="footer-role mb-0">
+              Analista en Sistemas · QA Manual · Developer en formación
+            </p>
+          </div>
+          <p class="footer-right mb-0">
+            Hecho con dedicación, aprendizaje constante y muchas ganas de crecer 🚀
+          </p>
+        </div>
+      </v-container>
     </v-footer>
   </v-app>
 </template>
@@ -29,12 +38,14 @@
   import AppNavbar from '@/components/cv/AppNavbar.vue'
   import Home from '@/components/cv/Home.vue'
   import AboutMe from '@/components/cv/AboutMe.vue'
+  import Availability from '@/components/cv/Availability.vue'
   import Skills from '@/components/cv/Skills.vue'
   import Projects from '@/components/cv/Projects.vue'
   import Experience from '@/components/cv/Experience.vue'
   import Education from '@/components/cv/Education.vue'
   import Certificates from '@/components/cv/Certificates.vue'
   import Contact from '@/components/cv/Contact.vue'
+  import CtaBanner from '@/components/cv/CtaBanner.vue'
   import { navItems, profile } from '@/data/cv'
 
   const year = new Date().getFullYear()
@@ -51,7 +62,7 @@
   }
 
   function updateActiveSection () {
-    const offset = 120
+    const offset = 140
     let current = 'home'
 
     for (const id of sectionIds) {
@@ -77,5 +88,59 @@
 <style>
   .v-application {
     font-family: 'Poppins', sans-serif;
+  }
+
+  .portfolio-footer {
+    padding: 0.85rem 0;
+  }
+
+  .footer-inner {
+    max-width: 1100px;
+  }
+
+  .footer-line {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    line-height: 1.45;
+    text-align: center;
+    width: 100%;
+  }
+
+  .footer-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-name {
+    font-weight: 600;
+  }
+
+  .footer-right {
+    max-width: 18rem;
+    line-height: 1.5;
+  }
+
+  @media (min-width: 900px) {
+    .footer-line {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .footer-left {
+      align-items: flex-start;
+      text-align: left;
+      flex: 1;
+    }
+
+    .footer-right {
+      text-align: right;
+      flex-shrink: 0;
+      max-width: 22rem;
+    }
   }
 </style>

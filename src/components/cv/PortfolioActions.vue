@@ -25,7 +25,7 @@
       v-if="showDownloadCv"
       class="port-btn port-btn--outline"
       :href="profile.cvPdf"
-      download
+      :download="profile.cvFileName"
     >
       <v-icon icon="mdi-download" size="small" />
       Descargar CV
@@ -44,7 +44,7 @@
     <a
       v-if="showEmail"
       class="port-btn port-btn--primary"
-      :href="`mailto:${profile.email}`"
+      :href="mailtoHref"
     >
       <v-icon icon="mdi-send-outline" size="small" />
       Enviar email
@@ -53,6 +53,7 @@
 </template>
 
 <script setup lang="ts">
+  import { mailtoHref } from '@/utils/mailto'
   import { profile } from '@/data/cv'
 
   withDefaults(

@@ -2,20 +2,20 @@
   <CvSection id="contact" title="Contacto e información">
     <v-row>
       <v-col cols="12" md="7">
-        <v-card class="portfolio-card" rounded="lg" variant="flat">
+        <v-card class="glass-card" rounded="lg" variant="flat">
           <v-list lines="two">
-            <v-list-item
-              :href="`mailto:${profile.email}`"
-              prepend-icon="mdi-email-outline"
-              subtitle="Email"
-              :title="profile.email"
-            />
-            <v-list-item
-              :href="`tel:${profile.phone.replace(/\s/g, '')}`"
-              prepend-icon="mdi-phone-outline"
-              subtitle="Teléfono"
-              :title="profile.phone"
-            />
+            <div class="email-wrap">
+              <v-list-item
+                prepend-icon="mdi-email-outline"
+                subtitle="Email"
+                :title="profile.email"
+                class="email-item"
+                @click="onEmailClick"
+              />
+              <transition name="copy-fade">
+                <span v-if="showCopyTip" class="copy-toast">Email copiado</span>
+              </transition>
+            </div>
             <v-list-item
               :href="profile.github"
               prepend-icon="mdi-github"
@@ -33,23 +33,6 @@
               title="Perfil de LinkedIn"
             />
           </v-list>
-
-          <v-divider />
-
-          <v-card-text>
-            <p class="text-caption text-medium-emphasis mb-2">Idiomas</p>
-            <div class="d-flex flex-wrap ga-2">
-              <v-chip
-                v-for="lang in languages"
-                :key="lang.name"
-                color="primary"
-                size="small"
-                variant="tonal"
-              >
-                {{ lang.name }} — {{ lang.level }}
-              </v-chip>
-            </div>
-          </v-card-text>
         </v-card>
       </v-col>
 
@@ -69,13 +52,64 @@
 </template>
 
 <script setup lang="ts">
+  import { ref } from 'vue'
   import CvSection from '@/components/cv/CvSection.vue'
   import PortfolioActions from '@/components/cv/PortfolioActions.vue'
-  import { languages, profile } from '@/data/cv'
+  import { copyEmailToClipboard } from '@/utils/mailto'
+  import { profile } from '@/data/cv'
+
+  const showCopyTip = ref(false)
+
+  async function onEmailClick () {
+    const ok = await copyEmailToClipboard()
+    if (ok) {
+      showCopyTip.value = true
+      setTimeout(() => { showCopyTip.value = false }, 2000)
+    }
+  }
 </script>
 
 <style scoped>
 .contact-text {
   line-height: 1.65;
+}
+
+.email-wrap {
+  position: relative;
+}
+
+.email-item {
+  cursor: pointer;
+}
+
+.email-item :deep(.v-list-item-title) {
+  color: rgb(var(--v-theme-primary));
+  font-weight: 600;
+}
+
+.copy-toast {
+  position: absolute;
+  top: 0.35rem;
+  right: 1rem;
+  z-index: 5;
+  padding: 0.35rem 0.65rem;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #fff;
+  background: rgb(var(--v-theme-primary));
+  box-shadow: 0 4px 14px rgb(108 92 231 / 35%);
+  pointer-events: none;
+}
+
+.copy-fade-enter-active,
+.copy-fade-leave-active {
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.copy-fade-enter-from,
+.copy-fade-leave-to {
+  opacity: 0;
+  transform: translateY(4px);
 }
 </style>

@@ -3,28 +3,34 @@ html {
 }
 
 [id] {
-  scroll-margin-top: 72px;
+  scroll-margin-top: 84px;
 }
 
 .font-heading {
   font-family: 'Poppins', sans-serif;
 }
 
-/* Fondo con profundidad */
+/* Fondo con más presencia de color */
 .portfolio-app .v-main {
   background:
-    radial-gradient(ellipse 90% 60% at 10% -5%, rgb(108 92 231 / 14%), transparent 55%),
-    radial-gradient(ellipse 70% 50% at 95% 30%, rgb(79 107 237 / 10%), transparent 50%),
-    radial-gradient(ellipse 50% 40% at 50% 100%, rgb(108 92 231 / 6%), transparent 45%),
-    linear-gradient(180deg, #fdfcff 0%, #f3f0ff 35%, #f8f6fc 70%, #eee9ff 100%);
+    radial-gradient(ellipse 100% 70% at 0% 0%, rgb(108 92 231 / 22%), transparent 52%),
+    radial-gradient(ellipse 80% 55% at 100% 15%, rgb(79 107 237 / 18%), transparent 48%),
+    radial-gradient(ellipse 60% 45% at 50% 95%, rgb(162 155 254 / 14%), transparent 50%),
+    linear-gradient(165deg, #f8f5ff 0%, #ebe4ff 28%, #f3efff 55%, #e8e0ff 100%);
   min-height: 100vh;
 }
 
 .v-theme--dark.portfolio-app .v-main {
   background:
-    radial-gradient(ellipse 80% 50% at 15% 0%, rgb(162 155 254 / 12%), transparent 50%),
-    radial-gradient(ellipse 60% 40% at 90% 40%, rgb(116 185 255 / 8%), transparent 45%),
-    linear-gradient(180deg, #0f0f1a 0%, #141428 50%, #0f0f1a 100%);
+    radial-gradient(ellipse 90% 60% at 5% 0%, rgb(162 155 254 / 18%), transparent 50%),
+    radial-gradient(ellipse 70% 50% at 95% 25%, rgb(116 185 255 / 12%), transparent 45%),
+    linear-gradient(180deg, #0f0f1a 0%, #1a1830 45%, #12121f 100%);
+}
+
+.hero-section {
+  background:
+    radial-gradient(ellipse 70% 80% at 30% 50%, rgb(108 92 231 / 12%), transparent 60%),
+    radial-gradient(ellipse 50% 60% at 85% 40%, rgb(79 107 237 / 10%), transparent 55%);
 }
 
 /* Espaciado entre secciones más compacto */
@@ -69,6 +75,27 @@ html {
 }
 
 /* Cards */
+.glass-card {
+  background: rgb(var(--v-theme-surface) / 0.55) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgb(var(--v-theme-primary) / 0.12) !important;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px) scale(1.008);
+    box-shadow: 0 14px 40px rgb(108 92 231 / 14%);
+    border-color: rgb(var(--v-theme-primary) / 0.22);
+  }
+}
+
+.v-theme--dark .glass-card {
+  background: rgb(var(--v-theme-surface) / 0.45) !important;
+}
+
 .portfolio-card {
   background: rgb(var(--v-theme-surface) / 0.92) !important;
   border: 1px solid rgb(var(--v-theme-primary) / 0.1);
@@ -143,11 +170,10 @@ html {
   }
 }
 
-/* Hero */
+/* Hero (altura pantalla en Home.vue scoped) */
 .hero-section {
   position: relative;
   animation: fadeInUp 0.7s ease-out both;
-  padding-bottom: 0.5rem;
 }
 
 .profile-ring {
@@ -257,6 +283,19 @@ html {
   line-height: 1.6 !important;
 }
 
+.exp-period,
+.date-chip {
+  margin: 0 !important;
+  font-size: 0.8rem !important;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.date-chip {
+  padding-inline: 10px !important;
+  height: 26px !important;
+}
+
 .edu-card {
   min-height: 7.5rem;
 
@@ -350,10 +389,10 @@ html {
   border: none;
   background: transparent;
   font-family: 'Poppins', sans-serif;
-  font-size: 0.78rem;
+  font-size: 0.85rem;
   font-weight: 500;
   color: rgb(var(--v-theme-on-surface) / 0.78);
-  padding: 0.38rem 0.55rem;
+  padding: 0.5rem 0.7rem;
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -372,9 +411,13 @@ html {
 
 @media (min-width: 960px) {
   .nav-link {
-    font-size: 0.82rem;
-    padding: 0.4rem 0.7rem;
+    font-size: 0.9rem;
+    padding: 0.55rem 0.8rem;
   }
+}
+
+.portfolio-nav__bar {
+  min-height: 68px !important;
 }
 
 @keyframes fadeInUp {
