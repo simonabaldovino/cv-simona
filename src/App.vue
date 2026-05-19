@@ -119,7 +119,6 @@
   }
 
   .footer-right {
-    max-width: 18rem;
     line-height: 1.5;
   }
 
@@ -140,7 +139,7 @@
     .footer-right {
       text-align: right;
       flex-shrink: 0;
-      max-width: 22rem;
+      white-space: nowrap;
     }
   }
 </style>

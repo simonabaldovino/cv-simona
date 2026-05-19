@@ -1,7 +1,7 @@
 Colocá tu archivo PDF en esta carpeta con el nombre exacto:
-
+CV - Simona Baldovino (1).pdf
   cv.pdf
 
 Ruta final: cv-simona/public/cv.pdf
-
+https://drive.google.com/file/d/1EX2N9KWfO2AQtMv2ArB_DDiEnnAs-OE5/view
 Los botones "Descargar CV" y "Ver CV" apuntan a /cv.pdf

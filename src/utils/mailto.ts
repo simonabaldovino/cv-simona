@@ -1,14 +1,18 @@
 import { profile } from '@/data/cv'
 
-export function buildMailtoLink (): string {
-  const subject = encodeURIComponent('Contacto desde portfolio')
-  const body = encodeURIComponent(
-    `Hola Simona,\n\nTe escribo desde tu portfolio web.\n\n`,
-  )
-  return `mailto:${profile.email}?subject=${subject}&body=${body}`
+/** Abre Gmail en el navegador con destinatario y mensaje precargados */
+export function buildGmailComposeLink (): string {
+  const params = new URLSearchParams({
+    view: 'cm',
+    fs: '1',
+    to: profile.email,
+    su: 'Contacto desde portfolio',
+    body: 'Hola Simona,\n\nTe escribo desde tu portfolio web.\n\n',
+  })
+  return `https://mail.google.com/mail/?${params.toString()}`
 }
 
-export const mailtoHref = buildMailtoLink()
+export const gmailComposeHref = buildGmailComposeLink()
 
 export async function copyEmailToClipboard (): Promise<boolean> {
   try {

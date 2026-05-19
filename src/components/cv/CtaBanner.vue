@@ -12,13 +12,17 @@
           <p class="cta-text mb-6">
             No dudes en contactarme.
           </p>
-          <a
-            class="port-btn port-btn--primary"
-            :href="mailtoHref"
-          >
-            <v-icon icon="mdi-email-outline" size="small" />
-            Enviar mensaje
-          </a>
+          <div class="cta-actions">
+            <a
+              class="port-btn port-btn--primary"
+              :href="gmailComposeHref"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <v-icon icon="mdi-gmail" size="small" />
+              Enviar mensaje
+            </a>
+          </div>
         </v-card-text>
       </v-card>
     </v-container>
@@ -26,7 +30,7 @@
 </template>
 
 <script setup lang="ts">
-  import { mailtoHref } from '@/utils/mailto'
+  import { gmailComposeHref } from '@/utils/mailto'
 </script>
 
 <style scoped>
@@ -57,5 +61,12 @@
   line-height: 1.6;
   opacity: 0.9;
   margin: 0;
+}
+
+.cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.65rem;
 }
 </style>

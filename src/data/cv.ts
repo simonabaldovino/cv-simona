@@ -47,7 +47,7 @@ export const skillGroups = [
   {
     title: 'Lenguajes',
     icon: 'mdi-code-braces',
-    items: ['Java (en curso)', 'C#', 'Python', 'SQL (básico)'],
+    items: ['Java (en curso)', 'Vue (en curso)', 'C#', 'Python', 'SQL (básico)'],
   },
   {
     title: 'Herramientas',
@@ -74,13 +74,6 @@ export const skillGroups = [
 
 export const projects = [
   {
-    name: 'Proyecto QA Blinker',
-    description:
-      'Testing manual de aplicación, diseño de casos de prueba, ejecución de pruebas y reporte de bugs. Experiencia práctica en QA.',
-    technologies: ['Jira', 'Testing funcional'],
-    icon: 'mdi-bug-check-outline',
-  },
-  {
     name: 'Sistema de Inscripción a Materias',
     description:
       'Aplicación en Java utilizando POO, listas y lógica de negocio para gestionar inscripciones. Proyecto académico.',
@@ -97,6 +90,15 @@ export const projects = [
 ]
 
 export const experiences = [
+  {
+    role: 'QA Manual',
+    company: 'Blinker App',
+    place: 'Testing',
+    period: '2026',
+    description:
+      'Testing manual de aplicación, diseño de casos de prueba, ejecución de pruebas y reporte de bugs en Jira.',
+    icon: 'mdi-bug-check-outline',
+  },
   {
     role: 'Emprendimiento de pastelería',
     company: 'Baking in Bliss',
@@ -140,7 +142,14 @@ export const education = [
     icon: 'mdi-laptop',
   },
   {
-    degree: 'Curso QA Manual',
+    degree: 'Vue.js',
+    institution: 'Udemy — Maximilian Schwarzmüller',
+    detail: 'Vue.js, componentes, reactividad, frontend moderno',
+    year: 'En curso',
+    icon: 'mdi-vuejs',
+  },
+  {
+    degree: 'QA Manual',
     institution: 'Coderhouse',
     detail: 'Testing manual y metodologías ágiles',
     year: '2026',

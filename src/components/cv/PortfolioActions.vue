@@ -44,16 +44,18 @@
     <a
       v-if="showEmail"
       class="port-btn port-btn--primary"
-      :href="mailtoHref"
+      :href="gmailComposeHref"
+      rel="noopener noreferrer"
+      target="_blank"
     >
-      <v-icon icon="mdi-send-outline" size="small" />
+      <v-icon icon="mdi-gmail" size="small" />
       Enviar email
     </a>
   </div>
 </template>
 
 <script setup lang="ts">
-  import { mailtoHref } from '@/utils/mailto'
+  import { gmailComposeHref } from '@/utils/mailto'
   import { profile } from '@/data/cv'
 
   withDefaults(
