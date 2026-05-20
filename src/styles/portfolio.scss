@@ -475,7 +475,7 @@ html {
 }
 
 .portfolio-nav__bar {
-  background: rgb(var(--v-theme-surface) / 0.7) !important;
+  background: rgb(var(--v-theme-surface) / 0.9) !important;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid rgb(var(--v-theme-primary) / 0.1) !important;
@@ -488,7 +488,7 @@ html {
 }
 
 .portfolio-nav--scrolled .portfolio-nav__bar {
-  background: rgb(var(--v-theme-surface) / 0.96) !important;
+  background: rgb(var(--v-theme-surface) / 0.98) !important;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom-color: rgb(var(--v-theme-primary) / 0.16) !important;
