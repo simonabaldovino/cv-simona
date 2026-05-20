@@ -1,12 +1,12 @@
 <template>
   <CvSection
     id="projects"
-    subtitle="Proyectos académicos y de práctica profesional"
-    title="Proyectos"
+    :subtitle="content.sections.projects.subtitle"
+    :title="content.sections.projects.title"
   >
     <div class="projects-stack">
       <v-card
-        v-for="project in projects"
+        v-for="project in content.projects"
         :key="project.name"
         class="portfolio-card project-card-h"
         rounded="lg"
@@ -51,7 +51,7 @@
         target="_blank"
       >
         <v-icon icon="mdi-github" size="small" />
-        Ver GitHub
+        {{ content.sections.projects.viewGithub }}
       </a>
     </div>
   </CvSection>
@@ -59,5 +59,7 @@
 
 <script setup lang="ts">
   import CvSection from '@/components/cv/CvSection.vue'
-  import { profile, projects } from '@/data/cv'
+  import { useLocale } from '@/composables/useLocale'
+
+  const { content, profile } = useLocale()
 </script>

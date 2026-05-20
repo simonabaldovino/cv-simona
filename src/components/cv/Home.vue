@@ -8,30 +8,38 @@
         <v-col class="text-center" cols="12" lg="5" md="5">
           <div class="hero-avatar-wrap hover-grow">
             <v-avatar class="profile-ring hero-avatar" :size="avatarSize">
-              <v-img :src="profile.photo" alt="Simona Baldovino" cover />
+              <v-img :src="profile.photo" :alt="profile.fullName" cover />
             </v-avatar>
           </div>
         </v-col>
 
-        <v-col class="hero-text-col" cols="12" lg="6" md="7">
-          <div class="hero-text-block hover-grow-slight">
-            <h1 class="hero-name font-heading">
-              {{ profile.fullName }}
-            </h1>
-            <p class="hero-title">
-              {{ profile.title }}
-            </p>
-            <p class="hero-tagline">
-              {{ profile.tagline }}
-            </p>
-            <PortfolioActions
-              class="hero-actions"
-              layout="row"
-              show-contact
-              show-projects
-              show-view-cv
-              @scroll="emit('scroll', $event)"
-            />
+       <v-col class="hero-text-col" cols="12" lg="6" md="7">
+  <div class="hero-text-block hover-grow-slight">
+    
+    <h1 class="hero-name font-heading">
+      {{ profile.fullName }}
+    </h1>
+
+    <p class="hero-title">
+      {{ profile.title }}
+    </p>
+
+    <p class="hero-location">
+  📍 Córdoba, Argentina
+    </p>
+
+    <p class="hero-tagline">
+      {{ profile.tagline }}
+    </p>
+
+    <PortfolioActions
+      class="hero-actions"
+      layout="row"
+      show-contact
+      show-projects
+      show-view-cv
+      @scroll="emit('scroll', $event)"
+    />
           </div>
         </v-col>
       </v-row>
@@ -43,10 +51,11 @@
   import { useDisplay } from 'vuetify'
   import { computed } from 'vue'
   import PortfolioActions from '@/components/cv/PortfolioActions.vue'
-  import { profile } from '@/data/cv'
+  import { useLocale } from '@/composables/useLocale'
 
   const emit = defineEmits<{ scroll: [id: string] }>()
   const display = useDisplay()
+  const { profile } = useLocale()
 
   const avatarSize = computed(() => {
     if (display.xl.value) return 320
@@ -123,6 +132,12 @@
   line-height: 1.45;
   margin: 0 0 0.65rem;
   width: 100%;
+}
+.hero-location {
+  font-size: 0.95rem;
+  opacity: 0.75;
+  margin-top: 4px;
+  margin-bottom: 18px;
 }
 
 .hero-tagline {

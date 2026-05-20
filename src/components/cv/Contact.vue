@@ -1,5 +1,5 @@
 <template>
-  <CvSection id="contact" title="Contacto e información">
+  <CvSection id="contact" :title="content.sections.contact.title">
     <v-row>
       <v-col cols="12" md="7">
         <v-card class="glass-card" rounded="lg" variant="flat">
@@ -7,30 +7,30 @@
             <div class="email-wrap">
               <v-list-item
                 prepend-icon="mdi-email-outline"
-                subtitle="Email"
+                :subtitle="content.ui.email"
                 :title="profile.email"
                 class="email-item"
                 @click="onEmailClick"
               />
               <transition name="copy-fade">
-                <span v-if="showCopyTip" class="copy-toast">Email copiado</span>
+                <span v-if="showCopyTip" class="copy-toast">{{ content.ui.emailCopied }}</span>
               </transition>
             </div>
             <v-list-item
               :href="profile.github"
               prepend-icon="mdi-github"
               rel="noopener noreferrer"
-              subtitle="GitHub"
+              :subtitle="content.ui.githubProfile"
               target="_blank"
-              title="Perfil de GitHub"
+              :title="content.ui.githubProfile"
             />
             <v-list-item
               :href="profile.linkedin"
               prepend-icon="mdi-linkedin"
               rel="noopener noreferrer"
-              subtitle="LinkedIn"
+              :subtitle="content.ui.linkedinProfile"
               target="_blank"
-              title="Perfil de LinkedIn"
+              :title="content.ui.linkedinProfile"
             />
           </v-list>
         </v-card>
@@ -38,7 +38,7 @@
 
       <v-col class="d-flex flex-column justify-center" cols="12" md="5">
         <p class="text-body-1 text-medium-emphasis mb-4 contact-text">
-          ¿Querés conocer más sobre mi perfil? Escribime o descargá mi CV en PDF.
+          {{ content.sections.contact.intro }}
         </p>
         <PortfolioActions
           layout="column"
@@ -56,8 +56,9 @@
   import CvSection from '@/components/cv/CvSection.vue'
   import PortfolioActions from '@/components/cv/PortfolioActions.vue'
   import { copyEmailToClipboard } from '@/utils/mailto'
-  import { profile } from '@/data/cv'
+  import { useLocale } from '@/composables/useLocale'
 
+  const { content, profile } = useLocale()
   const showCopyTip = ref(false)
 
   async function onEmailClick () {

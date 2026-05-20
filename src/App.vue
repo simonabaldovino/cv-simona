@@ -21,11 +21,11 @@
           <div class="footer-left">
             <p class="footer-name mb-1">© {{ year }} {{ profile.fullName }}</p>
             <p class="footer-role mb-0">
-              Analista en Sistemas · QA Manual · Developer en formación
+              {{ content.footer.role }}
             </p>
           </div>
           <p class="footer-right mb-0">
-            Hecho con dedicación, aprendizaje constante y muchas ganas de crecer 🚀
+            {{ content.footer.dedication }}
           </p>
         </div>
       </v-container>
@@ -34,7 +34,7 @@
 </template>
 
 <script setup lang="ts">
-  import { onMounted, onUnmounted, ref } from 'vue'
+  import { computed, onMounted, onUnmounted, ref } from 'vue'
   import AppNavbar from '@/components/cv/AppNavbar.vue'
   import Home from '@/components/cv/Home.vue'
   import AboutMe from '@/components/cv/AboutMe.vue'
@@ -46,12 +46,14 @@
   import Certificates from '@/components/cv/Certificates.vue'
   import Contact from '@/components/cv/Contact.vue'
   import CtaBanner from '@/components/cv/CtaBanner.vue'
-  import { navItems, profile } from '@/data/cv'
+  import { provideLocale } from '@/composables/useLocale'
+
+  const { content, profile } = provideLocale()
 
   const year = new Date().getFullYear()
   const activeSection = ref('home')
 
-  const sectionIds = navItems.map(item => item.id)
+  const sectionIds = computed(() => content.value.navItems.map(item => item.id))
 
   function scrollTo (id: string) {
     const el = document.getElementById(id)
@@ -65,7 +67,7 @@
     const offset = 140
     let current = 'home'
 
-    for (const id of sectionIds) {
+    for (const id of sectionIds.value) {
       const el = document.getElementById(id)
       if (el && el.getBoundingClientRect().top <= offset) {
         current = id

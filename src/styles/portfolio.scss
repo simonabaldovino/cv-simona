@@ -416,6 +416,22 @@ html {
   }
 }
 
+.portfolio-nav__actions {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 0.15rem;
+}
+
+.lang-toggle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.8rem !important;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  min-width: auto !important;
+  padding-inline: 0.5rem !important;
+}
+
 .portfolio-nav__bar {
   min-height: 68px !important;
 }

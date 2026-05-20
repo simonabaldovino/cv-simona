@@ -2,11 +2,11 @@
   <CvSection
     id="skills"
     muted
-    subtitle="Tecnologías y herramientas que utilizo en mis estudios y proyectos"
-    title="Skills"
+    :subtitle="content.sections.skills.subtitle"
+    :title="content.sections.skills.title"
   >
     <div
-      v-for="group in skillGroups"
+      v-for="group in content.skillGroups"
       :key="group.title"
       class="skill-row"
     >
@@ -32,5 +32,7 @@
 
 <script setup lang="ts">
   import CvSection from '@/components/cv/CvSection.vue'
-  import { skillGroups } from '@/data/cv'
+  import { useLocale } from '@/composables/useLocale'
+
+  const { content } = useLocale()
 </script>

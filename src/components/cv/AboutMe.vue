@@ -1,9 +1,9 @@
 <template>
-  <CvSection id="about" title="Sobre mí">
+  <CvSection id="about" :title="content.sections.about.title">
     <v-card class="portfolio-card" rounded="lg" variant="flat">
       <v-card-text class="pa-5 pa-md-7">
         <p
-          v-for="(text, index) in about.paragraphs"
+          v-for="(text, index) in content.about.paragraphs"
           :key="index"
           class="text-body-1 mb-4 about-text"
         >
@@ -12,10 +12,10 @@
 
         <v-divider class="my-4" />
 
-        <p class="text-subtitle-2 font-weight-bold mb-3">Idiomas</p>
+        <p class="text-subtitle-2 font-weight-bold mb-3">{{ content.ui.languages }}</p>
         <div class="languages-row">
           <v-chip
-            v-for="lang in languages"
+            v-for="lang in content.languages"
             :key="lang.name"
             class="lang-chip"
             color="primary"
@@ -33,7 +33,9 @@
 
 <script setup lang="ts">
   import CvSection from '@/components/cv/CvSection.vue'
-  import { about, languages } from '@/data/cv'
+  import { useLocale } from '@/composables/useLocale'
+
+  const { content } = useLocale()
 </script>
 
 <style scoped>

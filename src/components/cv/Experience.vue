@@ -2,8 +2,8 @@
   <CvSection
     id="experience"
     muted
-    subtitle="Experiencia laboral y emprendimientos"
-    title="Experiencia"
+    :subtitle="content.sections.experience.subtitle"
+    :title="content.sections.experience.title"
   >
     <v-timeline
       align="start"
@@ -13,7 +13,7 @@
       truncate-line="both"
     >
       <v-timeline-item
-        v-for="(exp, index) in experiences"
+        v-for="(exp, index) in content.experiences"
         :key="`${exp.company}-${index}`"
         dot-color="primary"
         size="x-small"
@@ -52,7 +52,9 @@
 
 <script setup lang="ts">
   import CvSection from '@/components/cv/CvSection.vue'
-  import { experiences } from '@/data/cv'
+  import { useLocale } from '@/composables/useLocale'
+
+  const { content } = useLocale()
 </script>
 
 <style scoped>

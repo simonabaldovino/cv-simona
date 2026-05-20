@@ -1,26 +1,29 @@
-import { profile } from '@/data/cv'
+import { baseProfile } from '@/data/profile'
+
+export type MailCopy = {
+  subject: string
+  body: string
+}
 
 /** Abre Gmail en el navegador con destinatario y mensaje precargados */
-export function buildGmailComposeLink (): string {
+export function buildGmailComposeLink (mail: MailCopy): string {
   const params = new URLSearchParams({
     view: 'cm',
     fs: '1',
-    to: profile.email,
-    su: 'Contacto desde portfolio',
-    body: 'Hola Simona,\n\nTe escribo desde tu portfolio web.\n\n',
+    to: baseProfile.email,
+    su: mail.subject,
+    body: mail.body,
   })
   return `https://mail.google.com/mail/?${params.toString()}`
 }
 
-export const gmailComposeHref = buildGmailComposeLink()
-
 export async function copyEmailToClipboard (): Promise<boolean> {
   try {
-    await navigator.clipboard.writeText(profile.email)
+    await navigator.clipboard.writeText(baseProfile.email)
     return true
   } catch {
     const input = document.createElement('textarea')
-    input.value = profile.email
+    input.value = baseProfile.email
     input.setAttribute('readonly', '')
     input.style.position = 'fixed'
     input.style.left = '-9999px'

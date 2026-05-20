@@ -7,7 +7,7 @@
       @click="emit('scroll', 'projects')"
     >
       <v-icon icon="mdi-folder-outline" size="small" />
-      Ver proyectos
+      {{ content.ui.viewProjects }}
     </button>
 
     <a
@@ -18,7 +18,7 @@
       target="_blank"
     >
       <v-icon icon="mdi-file-pdf-box" size="small" />
-      Ver CV
+      {{ content.ui.viewCv }}
     </a>
 
     <a
@@ -28,7 +28,7 @@
       :download="profile.cvFileName"
     >
       <v-icon icon="mdi-download" size="small" />
-      Descargar CV
+      {{ content.ui.downloadCv }}
     </a>
 
     <button
@@ -38,7 +38,7 @@
       @click="emit('scroll', 'contact')"
     >
       <v-icon icon="mdi-email-outline" size="small" />
-      Contacto
+      {{ content.ui.contact }}
     </button>
 
     <a
@@ -49,14 +49,13 @@
       target="_blank"
     >
       <v-icon icon="mdi-gmail" size="small" />
-      Enviar email
+      {{ content.ui.sendEmail }}
     </a>
   </div>
 </template>
 
 <script setup lang="ts">
-  import { gmailComposeHref } from '@/utils/mailto'
-  import { profile } from '@/data/cv'
+  import { useLocale } from '@/composables/useLocale'
 
   withDefaults(
     defineProps<{
@@ -78,4 +77,5 @@
   )
 
   const emit = defineEmits<{ scroll: [id: string] }>()
+  const { content, profile, gmailComposeHref } = useLocale()
 </script>

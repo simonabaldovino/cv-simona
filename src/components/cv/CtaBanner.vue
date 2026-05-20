@@ -4,13 +4,13 @@
       <v-card class="cta-card glass-card text-center" rounded="xl" variant="flat">
         <v-card-text class="pa-6 pa-md-8">
           <h2 class="cta-title font-heading mb-3">
-            ¿Trabajamos juntos?
+            {{ content.sections.cta.title }}
           </h2>
           <p class="cta-text mb-2">
-            Estoy disponible para nuevas oportunidades.
+            {{ content.sections.cta.line1 }}
           </p>
           <p class="cta-text mb-6">
-            No dudes en contactarme.
+            {{ content.sections.cta.line2 }}
           </p>
           <div class="cta-actions">
             <a
@@ -20,7 +20,7 @@
               target="_blank"
             >
               <v-icon icon="mdi-gmail" size="small" />
-              Enviar mensaje
+              {{ content.sections.cta.button }}
             </a>
           </div>
         </v-card-text>
@@ -30,7 +30,9 @@
 </template>
 
 <script setup lang="ts">
-  import { gmailComposeHref } from '@/utils/mailto'
+  import { useLocale } from '@/composables/useLocale'
+
+  const { content, gmailComposeHref } = useLocale()
 </script>
 
 <style scoped>

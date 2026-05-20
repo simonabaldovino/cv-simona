@@ -1,5 +1,5 @@
 <template>
-  <CvSection id="education" title="Educación">
+  <CvSection id="education" :title="content.sections.education.title">
     <v-timeline
       align="start"
       class="experience-timeline"
@@ -8,7 +8,7 @@
       truncate-line="both"
     >
       <v-timeline-item
-        v-for="(item, index) in education"
+        v-for="(item, index) in content.education"
         :key="`${item.degree}-${index}`"
         dot-color="primary"
         size="x-small"
@@ -59,42 +59,7 @@
 
 <script setup lang="ts">
   import CvSection from '@/components/cv/CvSection.vue'
-  import { education } from '@/data/cv'
+  import { useLocale } from '@/composables/useLocale'
+
+  const { content } = useLocale()
 </script>
-
-<style scoped>
-.edu-header {
-  width: 100%;
-  min-width: 0;
-}
-
-.edu-header__row {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.5rem 0.75rem;
-  margin-bottom: 0.35rem;
-}
-
-.edu-degree {
-  font-size: 1.05rem !important;
-  font-weight: 600;
-  line-height: 1.35;
-  flex: 1 1 auto;
-  min-width: 0;
-}
-
-.edu-institution {
-  font-size: 0.95rem;
-  font-weight: 500;
-  color: rgb(var(--v-theme-on-surface));
-  line-height: 1.5;
-}
-
-.edu-detail {
-  font-size: 0.875rem;
-  color: rgb(var(--v-theme-on-surface) / 0.7);
-  line-height: 1.5;
-  margin-top: 0.2rem;
-}
-</style>

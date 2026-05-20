@@ -1,17 +1,17 @@
 <template>
-  <CvSection id="availability" title="Disponibilidad">
+  <CvSection id="availability" :title="content.sections.availability.title">
     <v-card class="availability-card" rounded="xl" variant="flat">
       <v-card-item class="pa-5 pa-md-6">
         <template #prepend>
           <v-avatar color="primary" icon="mdi-briefcase-search-outline" size="48" variant="tonal" />
         </template>
         <v-card-title class="availability-title">
-          Abierta a nuevas oportunidades
+          {{ content.sections.availability.headline }}
         </v-card-title>
       </v-card-item>
       <v-card-text class="px-5 px-md-6 pb-6 pt-0">
         <p
-          v-for="(text, i) in availability.paragraphs"
+          v-for="(text, i) in content.availability.paragraphs"
           :key="i"
           class="availability-text mb-3 last:mb-0"
         >
@@ -24,7 +24,9 @@
 
 <script setup lang="ts">
   import CvSection from '@/components/cv/CvSection.vue'
-  import { availability } from '@/data/cv'
+  import { useLocale } from '@/composables/useLocale'
+
+  const { content } = useLocale()
 </script>
 
 <style scoped>

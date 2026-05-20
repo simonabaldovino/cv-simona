@@ -2,12 +2,12 @@
   <CvSection
     id="certificates"
     muted
-    subtitle="Formación complementaria y reconocimientos"
-    title="Certificados"
+    :subtitle="content.sections.certificates.subtitle"
+    :title="content.sections.certificates.title"
   >
     <div class="certs-list">
       <v-card
-        v-for="cert in certificates"
+        v-for="cert in content.certificates"
         :key="cert.name"
         class="portfolio-card cert-card-h"
         rounded="lg"
@@ -30,7 +30,7 @@
             target="_blank"
           >
             <v-icon icon="mdi-open-in-new" size="small" />
-            Ver
+            {{ content.sections.certificates.view }}
           </a>
         </div>
       </v-card>
@@ -40,5 +40,7 @@
 
 <script setup lang="ts">
   import CvSection from '@/components/cv/CvSection.vue'
-  import { certificates } from '@/data/cv'
+  import { useLocale } from '@/composables/useLocale'
+
+  const { content } = useLocale()
 </script>
