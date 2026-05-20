@@ -69,7 +69,7 @@
           {{ item.label }}
         </button>
       </nav>
-    </v-navigation-drawer>
+    </v-navigation-drawer> 
   </header>
 </template>
 
@@ -119,3 +119,12 @@
     window.removeEventListener('scroll', onScroll)
   })
 </script>
+
+<style>
+.v-toolbar.portfolio-nav__bar {
+  background: rgb(var(--v-theme-surface) / 0.9) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgb(var(--v-theme-primary) / 0.1) !important;
+}
+</style>
