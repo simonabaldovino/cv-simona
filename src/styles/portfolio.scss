@@ -12,6 +12,7 @@ html {
 
 /* Fondo con más presencia de color */
 .portfolio-app .v-main {
+  padding-top: 68px;
   background:
     radial-gradient(ellipse 100% 70% at 0% 0%, rgb(108 92 231 / 22%), transparent 52%),
     radial-gradient(ellipse 80% 55% at 100% 15%, rgb(79 107 237 / 18%), transparent 48%),
@@ -283,9 +284,28 @@ html {
   line-height: 1.6 !important;
 }
 
+.exp-header__main {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+  width: 100%;
+}
+
+.exp-title {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.exp-period {
+  margin-left: auto !important;
+}
+
 .exp-period,
+.edu-period,
 .date-chip {
-  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
   font-size: 0.8rem !important;
   font-weight: 600;
   letter-spacing: 0.01em;
@@ -294,6 +314,43 @@ html {
 .date-chip {
   padding-inline: 10px !important;
   height: 26px !important;
+}
+
+.edu-header {
+  width: 100%;
+  min-width: 0;
+}
+
+.edu-header__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+}
+
+.edu-degree {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-size: 1.05rem !important;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.edu-period {
+  margin-left: auto !important;
+}
+
+.edu-institution {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  line-height: 1.45;
+}
+
+.edu-detail {
+  font-size: 0.88rem;
+  opacity: 0.85;
+  line-height: 1.5;
+  margin-top: 0.25rem;
 }
 
 .edu-card {
@@ -355,19 +412,40 @@ html {
   }
 }
 
-/* Navbar sin marca */
+/* Navbar fija — el contenido no queda debajo al hacer scroll */
 .portfolio-nav {
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 1000;
+  left: 0;
+  right: 0;
+  z-index: 1100;
+  width: 100%;
 }
 
 .portfolio-nav__bar {
-  background: rgb(var(--v-theme-surface) / 0.78) !important;
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgb(var(--v-theme-primary) / 0.12) !important;
+  background: rgb(var(--v-theme-surface) / 0.7) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgb(var(--v-theme-primary) / 0.1) !important;
   padding-inline: 0.25rem 0.5rem;
+  transition:
+    background 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease,
+    backdrop-filter 0.25s ease;
+}
+
+.portfolio-nav--scrolled .portfolio-nav__bar {
+  background: rgb(var(--v-theme-surface) / 0.96) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom-color: rgb(var(--v-theme-primary) / 0.16) !important;
+  box-shadow: 0 6px 28px rgb(108 92 231 / 12%);
+}
+
+.v-theme--dark .portfolio-nav--scrolled .portfolio-nav__bar {
+  background: rgb(var(--v-theme-surface) / 0.94) !important;
+  box-shadow: 0 8px 32px rgb(0 0 0 / 0.45);
 }
 
 .portfolio-nav__links {

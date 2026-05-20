@@ -57,21 +57,3 @@
   const { content } = useLocale()
 </script>
 
-<style scoped>
-.exp-header {
-  width: 100%;
-  min-width: 0;
-}
-
-.exp-header__main {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.5rem 0.75rem;
-}
-
-.exp-title {
-  flex: 1 1 auto;
-  min-width: 0;
-}
-</style>

@@ -1,5 +1,5 @@
 <template>
-  <header class="portfolio-nav">
+  <header class="portfolio-nav" :class="{ 'portfolio-nav--scrolled': scrolled }">
     <v-toolbar class="portfolio-nav__bar" flat height="68">
       <nav class="portfolio-nav__links" :aria-label="content.ui.navAriaLabel">
         <button
@@ -36,8 +36,24 @@
 </template>
 
 <script setup lang="ts">
+  import { onMounted, onUnmounted, ref } from 'vue'
   import { useTheme } from 'vuetify'
   import { useLocale } from '@/composables/useLocale'
+
+  const scrolled = ref(false)
+
+  function onScroll () {
+    scrolled.value = window.scrollY > 16
+  }
+
+  onMounted(() => {
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+  })
+
+  onUnmounted(() => {
+    window.removeEventListener('scroll', onScroll)
+  })
 
   defineProps<{
     activeId?: string

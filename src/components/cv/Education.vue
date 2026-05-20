@@ -23,7 +23,7 @@
                 <v-card-title class="edu-degree pa-0">{{ item.degree }}</v-card-title>
                 <v-chip
                   v-if="item.year"
-                  class="flex-shrink-0 date-chip"
+                  class="edu-period flex-shrink-0 date-chip"
                   color="primary"
                   size="small"
                   variant="tonal"
@@ -32,7 +32,7 @@
                 </v-chip>
                 <v-chip
                   v-else-if="item.detail && !item.year"
-                  class="flex-shrink-0 date-chip"
+                  class="edu-period flex-shrink-0 date-chip"
                   color="primary"
                   size="small"
                   variant="tonal"
