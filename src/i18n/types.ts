@@ -81,6 +81,8 @@ export interface CvLocale {
     sendMessage: string
     navAriaLabel: string
     langToggleLabel: string
+    menuOpen: string
+    menuClose: string
   }
   mail: {
     subject: string

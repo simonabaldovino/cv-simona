@@ -19,13 +19,13 @@
         size="x-small"
       >
         <v-card class="portfolio-card experience-card timeline-card" rounded="lg" variant="flat">
-          <v-card-item class="py-3">
+          <v-card-item class="experience-card__item py-3">
             <template #prepend>
               <v-avatar :icon="exp.icon" color="primary" size="36" variant="tonal" />
             </template>
             <div class="exp-header">
               <div class="exp-header__main">
-                <v-card-title class="exp-title pa-0">{{ exp.role }}</v-card-title>
+                <p class="exp-title mb-0">{{ exp.role }}</p>
                 <v-chip
                   class="exp-period flex-shrink-0 date-chip"
                   color="primary"
@@ -35,10 +35,10 @@
                   {{ exp.period }}
                 </v-chip>
               </div>
-              <v-card-subtitle class="exp-company pa-0 mt-1">
+              <p class="exp-company mb-0 mt-1">
                 {{ exp.company }}
                 <span v-if="exp.place"> · {{ exp.place }}</span>
-              </v-card-subtitle>
+              </p>
             </div>
           </v-card-item>
           <v-card-text class="exp-desc pb-4 pt-0">
@@ -56,4 +56,3 @@
 
   const { content } = useLocale()
 </script>
-

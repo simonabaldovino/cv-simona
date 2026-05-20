@@ -79,6 +79,8 @@ export const enLocale: CvLocale = {
     sendMessage: 'Send a message',
     navAriaLabel: 'Portfolio sections',
     langToggleLabel: 'Español',
+    menuOpen: 'Open menu',
+    menuClose: 'Close menu',
   },
   mail: {
     subject: 'Portfolio contact',

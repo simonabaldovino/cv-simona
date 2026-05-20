@@ -77,6 +77,8 @@ export const esLocale: CvLocale = {
     sendMessage: 'Enviar mensaje',
     navAriaLabel: 'Secciones del portfolio',
     langToggleLabel: 'English',
+    menuOpen: 'Abrir menú',
+    menuClose: 'Cerrar menú',
   },
   mail: {
     subject: 'Contacto desde portfolio',
