@@ -95,8 +95,8 @@ export const enLocale: CvLocale = {
   },
   about: {
     paragraphs: [
-      "I am a Systems Analyst student currently building experience in Java (NetBeans), C# (Visual Studio), and GitHub for version control.",
-      "I have also trained in manual QA testing, with knowledge of functional testing and agile methodologies.",
+      "I am a Systems Analyst student currently expanding my knowledge in SQL and web development with HTML and CSS, alongside GitHub for version control.",
+      "I have also trained in manual QA testing, with knowledge of functional testing, bug reporting and agile methodologies.",
       "Passionate about software development and continuous learning, I am proactive, responsible, and quick to adapt to new challenges.",
     ],
   },
@@ -104,13 +104,14 @@ export const enLocale: CvLocale = {
     {
       title: 'Languages',
       icon: 'mdi-code-braces',
-      items: ['Java (Currently Learning)', 'Vue (Currently Learning)', 'C#', 'Python', 'SQL (basics)'],
+      items: ['HTML (currently learning)', 'CSS (currently learning)', 'Vue (currently learning)', 'Java', 'C#', 'Python', 'SQL (basics / currently learning)'],
     },
     {
       title: 'Tools',
       icon: 'mdi-toolbox-outline',
       items: [
         'GitHub',
+        'VS Code',
         'Visual Studio',
         'NetBeans',
         'Jira',
@@ -130,7 +131,14 @@ export const enLocale: CvLocale = {
   ],
   projects: [
     {
-      name: 'Course enrollment system',
+      name: 'Thesis Project — Requirements Gathering & Analysis Phase',
+      description:
+        'Design and analysis of a responsive web application to manage clients, appointments, treatments, and medical records for an aesthetics center.',
+      technologies: ['Systems Analysis', 'Requirements Gathering'],
+      icon: 'mdi-weather-sunny',
+    },
+    {
+      name: 'Course Enrollment System',
       description:
         'Java app with OOP, lists, and business rules to handle sign-ups. Academic project.',
       technologies: ['Java', 'NetBeans'],
@@ -191,7 +199,7 @@ export const enLocale: CvLocale = {
     {
       degree: 'Systems Analyst',
       institution: 'IES Siglo 21',
-      detail: 'Java, C#, GitHub',
+      detail: 'HTML, CSS, Java, C#, GitHub',
       year: '2025 — 2027',
       icon: 'mdi-laptop',
     },
@@ -224,6 +232,13 @@ export const enLocale: CvLocale = {
     },
   ],
   certificates: [
+    {
+      name: 'Programming Foundations: Databases',
+      institution: 'LinkedIn Learning',
+      year: '2026',
+      icon: 'mdi-database-outline',
+      pdf: '/certificados/Certificado Base de datos.pdf'
+    },
     {
       name: 'Manual QA Testing',
       institution: 'Coderhouse',

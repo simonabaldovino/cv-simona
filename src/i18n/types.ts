@@ -37,7 +37,8 @@ export type Certificate = {
   institution: string
   year: string
   icon: string
-  pdf: string
+  /** Si hay PDF/URL, se muestra el botón Ver */
+  pdf?: string
 }
 
 export type Language = { name: string, level: string }

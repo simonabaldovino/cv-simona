@@ -93,8 +93,8 @@ export const esLocale: CvLocale = {
   },
   about: {
     paragraphs: [
-      'Soy estudiante de Analista en Sistemas. Me encuentro desarrollando habilidades en programación con Java (NetBeans) y C# (Visual Studio), además de trabajar con GitHub para control de versiones.',
-      'También tengo formación en testing manual QA, con conocimientos en pruebas funcionales y metodologías ágiles.',
+      'Soy estudiante de Analista de Sistemas. Me encuentro ampliando conocimientos en SQL y desarrollo web con HTML y CSS, además de trabajar con GitHub para control de versiones.',
+      'También tengo formación en testing manual QA, con conocimientos en pruebas funcionales, reporte de bugs y metodologías ágiles.',
       'Me interesa el desarrollo de software y la mejora continua, destacándome por ser proactiva, responsable y con rápida capacidad de aprendizaje.',
     ],
   },
@@ -102,13 +102,14 @@ export const esLocale: CvLocale = {
     {
       title: 'Lenguajes',
       icon: 'mdi-code-braces',
-      items: ['Java (en curso)', 'Vue (en curso)', 'C#', 'Python', 'SQL (básico)'],
+      items: ['HTML (en aprendizaje)', 'CSS (en aprendizaje)', 'Vue (en curso)', 'Java', 'C#', 'Python', 'SQL (básico / en aprendizaje)'],
     },
     {
       title: 'Herramientas',
       icon: 'mdi-toolbox-outline',
       items: [
         'GitHub',
+        'VS Code',
         'Visual Studio',
         'NetBeans',
         'Jira',
@@ -127,6 +128,13 @@ export const esLocale: CvLocale = {
     },
   ],
   projects: [
+    {
+      name: 'Proyecto de tesis — En etapa de relevamiento y análisis.',
+      description:
+        'Diseño y análisis de un sistema web responsive para gestionar clientes, turnos, tratamientos y fichas de seguimiento de un centro de estética.',
+      technologies: ['Análisis de Sistema', 'Relevamiento'],
+      icon: 'mdi-weather-sunny',
+    },
     {
       name: 'Sistema de Inscripción a Materias',
       description:
@@ -189,7 +197,7 @@ export const esLocale: CvLocale = {
     {
       degree: 'Analista en Sistemas',
       institution: 'IES Siglo 21',
-      detail: 'Java, C#, Github',
+      detail: 'HTML, CSS, Java, C#, Github',
       year: '2025 — 2027',
       icon: 'mdi-laptop',
     },
@@ -222,6 +230,13 @@ export const esLocale: CvLocale = {
     },
   ],
   certificates: [
+    {
+      name: 'Fundamentos de la programación: Bases de datos',
+      institution: 'LinkedIn Learning',
+      year: '2026',
+      icon: 'mdi-database-outline',
+       pdf: '/certificados/Certificado Base de datos.pdf',
+    },
     {
       name: 'Testing QA Manual',
       institution: 'Coderhouse',
